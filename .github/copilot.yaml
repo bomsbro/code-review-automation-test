@@ -1,0 +1,98 @@
+# GitHub Copilot Configuration
+# This file configures GitHub Copilot for automated code reviews
+
+# Enable Copilot code review for pull requests
+review:
+  enabled: true
+  
+  # Auto-assign Copilot as reviewer for new PRs
+  auto_assign: true
+  
+  # Review all files except those in exclude patterns
+  include_patterns:
+    - "**/*.ts"
+    - "**/*.tsx"
+    - "**/*.js"
+    - "**/*.jsx"
+    - "**/*.css"
+    - "**/*.scss"
+    - "**/*.less"
+    - "**/*.md"
+    - "**/*.json"
+    - "**/*.yml"
+    - "**/*.yaml"
+  
+  # Exclude certain files/directories from review
+  exclude_patterns:
+    - "node_modules/**"
+    - "dist/**"
+    - "build/**"
+    - "*.min.js"
+    - "*.min.css"
+    - "package-lock.json"
+    - "pnpm-lock.yaml"
+    - "yarn.lock"
+    - ".next/**"
+    - "coverage/**"
+    - "*.d.ts"
+
+# Custom instructions file reference
+instructions_file: ".github/copilot-instructions.md"
+
+# Review trigger settings
+triggers:
+  # When to trigger Copilot review
+  pull_request:
+    - opened
+    - synchronize
+    - ready_for_review
+  
+  # Target branches for review
+  target_branches:
+    - main
+    - master
+    - develop
+    - "release/*"
+
+# Review scope configuration
+scope:
+  # Maximum number of files to review per PR
+  max_files: 50
+  
+  # Maximum file size to review (in KB)
+  max_file_size: 500
+  
+  # Focus areas for review
+  focus_areas:
+    - security
+    - performance
+    - maintainability
+    - best_practices
+    - type_safety
+    - accessibility
+
+# Comment settings
+comments:
+  # Style of review comments
+  style: "constructive"
+  
+  # Include suggested fixes when possible
+  include_suggestions: true
+  
+  # Comment severity levels
+  severity_levels:
+    - critical
+    - major
+    - minor
+    - suggestion
+
+# Integration settings
+integrations:
+  # Enable linting integration
+  linting: true
+  
+  # Enable security scanning integration
+  security_scan: true
+  
+  # Enable performance analysis
+  performance_analysis: true 
