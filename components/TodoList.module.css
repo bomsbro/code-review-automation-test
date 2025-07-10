@@ -1,5 +1,5 @@
 .container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -43,17 +43,24 @@
 }
 
 .todoItem {
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.todoContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   margin-bottom: 10px;
-  background-color: #f9f9f9;
-  border-radius: 4px;
 }
 
 .todoText {
   cursor: pointer;
+  flex-grow: 1;
+  font-size: 16px;
 }
 
 .completed {
@@ -61,8 +68,30 @@
   color: #888;
 }
 
+.todoActions {
+  display: flex;
+  gap: 10px;
+}
+
+.commentButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.commentButton:hover {
+  background-color: #1976d2;
+}
+
 .deleteButton {
-  padding: 5px 10px;
+  padding: 6px 12px;
   font-size: 14px;
   background-color: #f44336;
   color: white;
@@ -73,4 +102,100 @@
 
 .deleteButton:hover {
   background-color: #d32f2f;
+}
+
+/* 댓글 섹션 스타일 */
+.commentsSection {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.commentInputContainer {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 8px;
+}
+
+.commentInput {
+  flex-grow: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.addCommentButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.addCommentButton:hover {
+  background-color: #45a049;
+}
+
+.commentsList {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.comment {
+  background-color: white;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+}
+
+.commentText {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.commentMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentTime {
+  font-size: 12px;
+  color: #666;
+}
+
+.deleteCommentButton {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.deleteCommentButton:hover {
+  background-color: #ffebee;
+  color: #f44336;
+}
+
+.noComments {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 20px;
+  font-size: 14px;
 }
