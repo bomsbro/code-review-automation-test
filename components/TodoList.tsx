@@ -123,6 +123,7 @@ export default function TodoList() {
                 <button 
                   onClick={() => toggleComments(todo.id)} 
                   className={styles.commentButton}
+                  aria-label={`Toggle comments for ${todo.text}`}
                 >
                   💬 Comments ({todo.comments.length})
                 </button>
